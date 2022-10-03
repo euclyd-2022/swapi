@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@700&display=swap");
+/* https://css-tricks.com/snippets/css/star-wars-crawl-text/ */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+main {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  font-family: "News Cycle", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 300px;
+  padding: 0 2rem 2rem;
+  background: #333;
+  color: gold;
+  text-align: center;
+  perspective: 400px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media screen and (min-width: 576px) {
+  article {
+    height: 20vh;
+    width: 400px;
+  }
+}
+section {
+  /* transform: rotateX(40deg); */
+  position: relative;
+  min-width: 10vw;
+  top: 5px;
+  /* transform-origin: 50% 100%; */
+}
+
+.animate {
+  animation-name: crawl;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes crawl {
+  0% {
+    top: 100px;
+    transform: rotateX(45deg) translateZ(0);
+  }
+  100% {
+    top: 0;
+    transform: rotateX(55deg) translateZ(-100px);
+  }
+}
